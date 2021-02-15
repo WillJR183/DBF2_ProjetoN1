@@ -10,4 +10,10 @@ public class Teste {
 	public String teste() {
 		return "PrimeiroTeste";
 	}
+	
+	@GetMapping("/teste2")
+	public String testeComBootstrap() {
+		return "SegundoTeste";
+	}
+	
 }
