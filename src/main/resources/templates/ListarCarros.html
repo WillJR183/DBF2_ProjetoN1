@@ -20,9 +20,15 @@
 						</tr>
 					</thead>
 					<tbody>
+						<! Listando carros direto no frontend de maneira fixa   >	
 						<tr>
 							<td>0</td>
 							<td>HSR-3456</td>
+						</tr>
+						<! Listando carros direto no backend sem BD   >	
+						<tr th:each="carro : ${carros}">
+							<td th:text="${carro.id}"> </td>
+							<td th:text="${carro.placa}"> </td>
 						</tr>
 					</tbody>
 				</table>
