@@ -30,6 +30,10 @@
 							<td th:text="${carro.id}"> </td>
 							<td th:text="${carro.placa}"> </td>
 						</tr>
+						<tr th:each="carroBD : ${carrosBD}">
+							<td th:text="${carroBD.id}"></td>
+							<td th:text="${carroBD.placa}"></td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
