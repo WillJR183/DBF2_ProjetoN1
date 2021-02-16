@@ -1,8 +1,5 @@
 package br.edu.ifms.dbf2.ProjetoN1.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,16 +19,9 @@ public class CarroController {
 	@GetMapping("/carros")
 	public ModelAndView listar() {
 		
-		// ModelAndView - especifica qual view será renderizada
 		ModelAndView modelAndView = new ModelAndView("ListarCarros");
-		
-		// adicionando o bjeto que será manipulado na view
-		// também chamando método para listar dados da lista do backend
-		modelAndView.addObject("carros", buscarCarros());
-		
-		// outro método para listar, porém listando dados do banco de dados H2
-		modelAndView.addObject("carrosBD", carros.findAll());
-		
+		modelAndView.addObject("carrosBD", carroService.buscarTodos());
+		modelAndView.addObject(new Carro());
 		return modelAndView;
 	}
 	
@@ -56,7 +46,7 @@ public class CarroController {
 		carroService.deletar(id);
 		return "redirect:/carros";
 	}
-	
+	/*
 	public List<Carro> buscarCarros(){
 		
 		List<Carro> carros = new ArrayList<Carro>();
@@ -77,5 +67,5 @@ public class CarroController {
 		
 		return carros;
 	}
-	
+	*/
 }
