@@ -8,14 +8,17 @@
 	</head>
 	
 	<body>
+	
 		<div class="card" style="margin: 10px">
+		
 			<div class="card-header">
 				<h1 class="card-title">Lista de Carros Cadastrados - By William Marques</h1>
 			</div>
 			
 			<div class="card-body">
 			
-				<form class="form-inline" method="POST" th:object="${carro}" th:action="@{/carros}" style="margin: 20px 0">
+				<form class="form-inline" method="POST" th:object="${carro}" th:action="@{/carros}"
+				 style="margin: 20px 0">
 					
 					<div class="form-group">
 					
@@ -36,10 +39,12 @@
 							<th>Deletar</th>
 						</tr>
 					</thead>
+			
 					<tbody>
 						<tr th:each="carro : ${carros}">
 							<td th:text="${carro.id}"></td>
 							<td th:text="${carro.placa}"></td>
+							
 							<td> <a class="btn btn-primary"
 						 			th:href="@{/carro/{id}(id=${carro.id})}">Editar
 								 </a> 
@@ -50,8 +55,12 @@
 							</td>
 						</tr>
 					</tbody>
+					
 				</table>
+				
 			</div>
+			
 		</div>
+		
 	</body>
 </html>

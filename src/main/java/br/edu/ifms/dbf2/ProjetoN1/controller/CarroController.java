@@ -22,6 +22,7 @@ public class CarroController {
 		ModelAndView modelAndView = new ModelAndView("ListarCarros");
 		modelAndView.addObject("carros", carroService.buscarTodos());
 		modelAndView.addObject(new Carro());
+		
 		return modelAndView;
 	}
 	
@@ -29,6 +30,7 @@ public class CarroController {
 	public String salvar(Carro carro) {
 		
 		carroService.salvar(carro);
+		
 		return "redirect:/carros";
 	}
 	
@@ -37,6 +39,7 @@ public class CarroController {
 		
 		ModelAndView modelAndView = new ModelAndView("EditarCarro");
 		modelAndView.addObject(carroService.procurar(id));
+		
 		return modelAndView;
 	}
 	
@@ -44,6 +47,7 @@ public class CarroController {
 	public String deletar(@PathVariable("id") Long id) {
 		
 		carroService.deletar(id);
+		
 		return "redirect:/carros";
 	}
 		
