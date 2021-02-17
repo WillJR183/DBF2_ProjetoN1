@@ -20,12 +20,12 @@ public class CarroController {
 	public ModelAndView listar() {
 		
 		ModelAndView modelAndView = new ModelAndView("ListarCarros");
-		modelAndView.addObject("carrosBD", carroService.buscarTodos());
+		modelAndView.addObject("carros", carroService.buscarTodos());
 		modelAndView.addObject(new Carro());
 		return modelAndView;
 	}
 	
-	@PostMapping
+	@PostMapping("/carros")
 	public String salvar(Carro carro) {
 		
 		carroService.salvar(carro);
@@ -46,26 +46,5 @@ public class CarroController {
 		carroService.deletar(id);
 		return "redirect:/carros";
 	}
-	/*
-	public List<Carro> buscarCarros(){
 		
-		List<Carro> carros = new ArrayList<Carro>();
-		Carro c1 = new Carro();
-		Carro c2 = new Carro();
-		Carro c3 = new Carro();
-		
-		c1.setId((long) 1);
-		c1.setPlaca("HSR-2345");
-		c2.setId((long) 2);
-		c2.setPlaca("OOR-7463");
-		c3.setId((long) 3);
-		c3.setPlaca("KNA-1098");
-		
-		carros.add(c1);
-		carros.add(c2);
-		carros.add(c3);
-		
-		return carros;
-	}
-	*/
 }

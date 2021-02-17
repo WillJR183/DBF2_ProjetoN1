@@ -3,10 +3,13 @@ package br.edu.ifms.dbf2.ProjetoN1.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.edu.ifms.dbf2.ProjetoN1.model.Carro;
 import br.edu.ifms.dbf2.ProjetoN1.repository.Carros;
+
 // lógica de negócios em uma camada diferente, e separada do arquivo de classe @Controller
+@Service
 public class CarroService {
 	
 	@Autowired
