@@ -15,6 +15,11 @@ public class CarroController {
 	
 	@Autowired
 	private CarroService carroService;
+	
+	@GetMapping("/")
+	public String paginaPrincipal() {
+		return "redirect:/carros";
+	}
 		
 	@GetMapping("/carros")
 	public ModelAndView listar() {
