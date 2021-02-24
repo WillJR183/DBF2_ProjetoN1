@@ -22,7 +22,7 @@ public class MultaController {
 	@GetMapping("/multas")	
 	public ModelAndView listar() {
 		
-		ModelAndView modelAndView =	new	ModelAndView("ListaMultas");
+		ModelAndView modelAndView =	new	ModelAndView("ListarMultas");
 		modelAndView.addObject("multas", multaService.buscarTodos());
 		modelAndView.addObject(new	Multa());
 		modelAndView.addObject("infracoes",	infracaoService.buscarTodos());
