@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width" />
@@ -14,7 +15,9 @@
 		<div class="card" style="margin: 10px">
 		
 			<div class="card-header">
+			
 				<h1 class="card-title">Lista de Carros Cadastrados - By William Marques</h1>
+				
 			</div>
 			
 			<div class="card-body">
@@ -33,29 +36,39 @@
 				</form>
 				
 				<table class="table">
+				
 					<thead>
+					
 						<tr>
 							<th>#</th>
 							<th>Placa</th>
 							<th>Editar</th>
 							<th>Deletar</th>
 						</tr>
+						
 					</thead>
 			
 					<tbody>
+					
 						<tr th:each="carro : ${carros}">
+						
 							<td th:text="${carro.id}"></td>
 							<td th:text="${carro.placa}"></td>
 							
-							<td> <a class="btn btn-primary"
-						 			th:href="@{/carro/{id}(id=${carro.id})}">Editar
-								 </a> 
+							<td> 
+								<a class="btn btn-primary" th:href="@{/carro/{id}(id=${carro.id})}">
+									Editar
+								</a> 
 							</td>
-							<td> <a class="btn btn-danger" 
-									th:href="@{/carro/deletar/{id}(id=${carro.id})}">Deletar
-								 </a> 
+							
+							<td> 
+								<a class="btn btn-danger" th:href="@{/carro/deletar/{id}(id=${carro.id})}">
+									Deletar
+								</a> 
 							</td>
+							
 						</tr>
+						
 					</tbody>
 					
 				</table>
@@ -65,4 +78,5 @@
 		</div>
 		
 	</body>
+
 </html>
